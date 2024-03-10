@@ -68,8 +68,8 @@ Now, Queue becomes empty, So, terminate these process of iteration.
 </ol>
 
 <h2>Program:</h2>
-Developed By:PRASANNA V
-REG NO: 212223240123
+Developed By : PRASANNA V<br>
+REG NO : 212223240123
 <hr>
 
 ```
