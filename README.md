@@ -67,7 +67,43 @@ Now, Queue becomes empty, So, terminate these process of iteration.
 
 </ol>
 
+<h2>Program:</h2>
+Developed By:PRASANNA V<hr>
+REG NO: 212223240123
 <hr>
+
+```
+from collections import deque
+from collections import defaultdict
+
+def bfs(graph,start,visited,path):
+    queue = deque()
+    path.append(start)
+    queue.append(start)
+    visited[start] = True
+    while len(queue) != 0:
+        tmpnode = queue.popleft()
+        for neighbour in graph[tmpnode]:
+            if visited[neighbour] == False:
+                path.append(neighbour)
+                queue.append(neighbour)
+                visited[neighbour] = True
+    return path
+
+graph = defaultdict(list)
+v,e = map(int,input().split())
+for i in range(e):
+    u,v = map(str,input().split())
+    graph[u].append(v)
+    graph[v].append(u)
+
+start = 'A'
+path = []
+visited = defaultdict(bool)
+traversedpath = bfs(graph,start,visited,path)
+print(traversedpath)
+```
+
 <h3>Sample Input</h3>
 <hr>
 7 9 <BR>
@@ -90,6 +126,7 @@ G F <BR>
 <hr>
 <h3>Sample Input</h3>
 <hr>
+
 5 6 <BR>
 0 1 <BR>
 0 2 <BR>
@@ -105,7 +142,6 @@ G F <BR>
 <h3>Result:</h3>
 <hr>
 <p>Thus,a Graph was constructed and implementation of Breadth First Search for the same graph was done successfully.</p>
-
 
 
 
